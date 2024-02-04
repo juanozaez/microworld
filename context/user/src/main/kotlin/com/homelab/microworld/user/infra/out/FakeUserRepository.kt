@@ -1,7 +1,7 @@
-package com.microworld.user.infra.out
+package com.homelab.microworld.user.infra.out
 
-import com.microworld.user.domain.User
-import com.microworld.user.domain.UserRepository
+import com.homelab.microworld.user.domain.User
+import com.homelab.microworld.user.domain.UserRepository
 import jakarta.inject.Named
 
 @Named

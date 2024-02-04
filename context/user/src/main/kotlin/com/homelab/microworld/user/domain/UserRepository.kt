@@ -1,4 +1,4 @@
-package com.microworld.user.domain
+package com.homelab.microworld.user.domain
 
 interface UserRepository {
 

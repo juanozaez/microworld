@@ -25,7 +25,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("jakarta.inject:jakarta.inject-api:2.0.1")
-	testImplementation("io.rest-assured:rest-assured:5.4.0")
+	testImplementation("io.rest-assured:rest-assured:5.1.0")
 	testImplementation("io.rest-assured:kotlin-extensions")
 	implementation(project(":context:user"))
 }

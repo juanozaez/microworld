@@ -1,60 +1,21 @@
 package com.homelab.microworld.context.user.register
 
-import io.restassured.RestAssured
-import io.restassured.module.kotlin.extensions.Extract
-import io.restassured.module.kotlin.extensions.Given
-import io.restassured.module.kotlin.extensions.Then
-import io.restassured.module.kotlin.extensions.When
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions
+import com.homelab.microworld.shared.AbstractAcceptanceTest
+import com.homelab.microworld.user.domain.UserRepository
+import jakarta.inject.Inject
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.boot.test.web.client.TestRestTemplate
-import org.springframework.boot.test.web.server.LocalServerPort
 
+class RegisterUserAcceptanceTest : AbstractAcceptanceTest() {
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class RegisterUserAcceptanceTest {
-
-    @LocalServerPort
-    private val port = 0
-
-    //@Inject
-    //private lateinit var repository: UserRepository
-
-    @Autowired
-    private val restTemplate: TestRestTemplate? = null
-
-    @Test
-    @Throws(Exception::class)
-    fun greetingShouldReturnDefaultMessage() {
-        assertThat(
-            restTemplate!!.getForObject(
-                "http://localhost:$port/",
-                String::class.java
-            )
-        ).contains("Hello, World")
-    }
+    @Inject
+    private lateinit var repository: UserRepository
 
     @Test
     fun `registers an user`() {
-        RestAssured.port = port
-        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails()
+        postRequest(payload, "/users")
 
-        //Given {
-         //   body(payload)
-        //}
-        When {
-            post("/")
-        } Then {
-            statusCode(200)
-        } Extract {
-            val body = body().asString()
-            Assertions.assertEquals(body, "Hello, World")
-
-        }
-
+        assertEquals(1, repository.findAll().size)
     }
 
     private val payload = """
@@ -62,5 +23,5 @@ class RegisterUserAcceptanceTest {
           "name": "John",
           "surname": "Doe"
         }
-    """.trimIndent()
+    """
 }
