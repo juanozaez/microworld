@@ -5,3 +5,6 @@ pluginManagement {
 	}
 }
 rootProject.name = "microworld"
+
+include("context:user")
+include("lib:event-broker")
