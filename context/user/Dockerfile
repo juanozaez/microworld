@@ -1,7 +1,7 @@
 # TEMPORAL BUILD IMAGE
 FROM eclipse-temurin:17-jdk AS build-env
 
-COPY ./context/user /app
+COPY . /app
 WORKDIR /app
 RUN ["./gradlew", "assemble"]
 
