@@ -23,10 +23,14 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("jakarta.inject:jakarta.inject-api:2.0.1")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    runtimeOnly("org.postgresql:postgresql:42.2.9")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.rest-assured:rest-assured:5.1.0")
     testImplementation("io.rest-assured:kotlin-extensions")
+
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,6 +1,6 @@
-package com.homelab.microworld.context.user.register
+package com.homelab.microworld.user.acceptance
 
-import com.homelab.microworld.shared.AbstractAcceptanceTest
+import com.homelab.microworld.user.AbstractAcceptanceTest
 import com.homelab.microworld.user.domain.UserRepository
 import jakarta.inject.Inject
 import org.junit.jupiter.api.Assertions.assertEquals

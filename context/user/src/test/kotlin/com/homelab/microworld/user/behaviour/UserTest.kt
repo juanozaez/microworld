@@ -1,4 +1,4 @@
-package com.homelab.microworld.user
+package com.homelab.microworld.user.behaviour
 
 import com.homelab.microworld.user.application.register.RegisterUserCommandHandler
 import com.homelab.microworld.user.infra.`in`.register.RegisterUserBody

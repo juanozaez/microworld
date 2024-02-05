@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:55432/user
+    hikari:
+      username: user
+      password: password
+      maximum-pool-size: 2
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: ${FORMAT_SQL:false}
+    hibernate:
+      ddl-auto: none
+    show-sql: ${SHOW_SQL:false}
+    open-in-view: false
