@@ -4,13 +4,11 @@ spring:
     hikari:
       username: user
       password: password
-      maximum-pool-size: 2
+      maximum-pool-size: 5
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: ${FORMAT_SQL:false}
     hibernate:
       ddl-auto: create
-    show-sql: ${SHOW_SQL:false}
     open-in-view: false

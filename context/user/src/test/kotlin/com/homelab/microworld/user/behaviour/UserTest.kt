@@ -3,7 +3,7 @@ package com.homelab.microworld.user.behaviour
 import com.homelab.microworld.user.application.register.RegisterUserCommandHandler
 import com.homelab.microworld.user.infra.`in`.register.RegisterUserBody
 import com.homelab.microworld.user.infra.`in`.register.RegisterUserController
-import com.homelab.microworld.user.infra.out.FakeUserRepository
+import com.homelab.microworld.user.fake.FakeUserRepository
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 

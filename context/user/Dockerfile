@@ -5,13 +5,12 @@ COPY . /app
 WORKDIR /app
 RUN ["./gradlew", "assemble"]
 
+# REAL IMAGE
 FROM busybox:uclibc AS builder-wget
 
-# REAL IMAGE
 FROM gcr.io/distroless/java17-debian11
 COPY --from=builder-wget /bin/wget /usr/bin/wget
 COPY --from=build-env /app/build/libs/user-0.0.1-SNAPSHOT.jar /app/user.jar
-
 
 WORKDIR /app
 

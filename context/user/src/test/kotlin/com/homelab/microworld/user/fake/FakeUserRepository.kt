@@ -1,10 +1,8 @@
-package com.homelab.microworld.user.infra.out
+package com.homelab.microworld.user.fake
 
 import com.homelab.microworld.user.domain.User
 import com.homelab.microworld.user.domain.UserRepository
-import jakarta.inject.Named
 
-@Named
 class FakeUserRepository : UserRepository {
     private val users = mutableListOf<User>()
 

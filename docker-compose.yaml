@@ -10,7 +10,7 @@ services:
     depends_on:
       - postgres_user
     environment:
-      - DATABASE_HOST=localhost
+      - DATABASE_HOST=postgres_user
 
   postgres_user:
     image: postgres:15.3
