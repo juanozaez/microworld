@@ -11,7 +11,7 @@ class RegisterUserController(private val commandHandler: RegisterUserCommandHand
 
     @PostMapping("/users")
     fun register(@RequestBody body: RegisterUserBody) {
-        commandHandler.handle(RegisterUserCommand("body.name", "body.surname"))
+        commandHandler.handle(RegisterUserCommand(body.name, body.surname))
     }
 }
 

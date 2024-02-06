@@ -9,7 +9,6 @@ class FakeUserRepository : UserRepository {
     private val users = mutableListOf<User>()
 
     override fun save(user: User) {
-        println("User $user added")
         users.add(user)
     }
 

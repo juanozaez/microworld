@@ -8,9 +8,10 @@ import jakarta.persistence.Table
 @Table(name = "users", schema = "users")
 data class JpaUser(
     @Id
-    val id: String,
-    val name: String?,
-    val surname: String?
-)
-
-
+    val id: String = "",
+    val name: String = "",
+    val surname: String = ""
+) {
+    // No args constructor, required by hibernate
+    constructor() : this("", "", "")
+}
