@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:55432/user
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:55432/users
     hikari:
       username: user
       password: password
@@ -11,6 +11,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: ${FORMAT_SQL:false}
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     show-sql: ${SHOW_SQL:false}
     open-in-view: false

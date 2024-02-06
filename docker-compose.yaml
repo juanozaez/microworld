@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   user:
     hostname: user
@@ -8,30 +7,27 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    networks:
-      - microworld
     depends_on:
       - postgres_user
+    environment:
+      - DATABASE_HOST=localhost
 
   postgres_user:
     image: postgres:15.3
     hostname: postgres_user
     container_name: postgres_user
     environment:
-      POSTGRES_DB: user
+      POSTGRES_DB: users
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
     tmpfs:
       - /var/lib/postgresql/data
     ports:
       - 55432:5432
+    volumes:
+      - ./context/user/database/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: "pg_isready"
       interval: 10s
       timeout: 5s
       retries: 5
-    networks:
-      - microworld
-
-networks:
-  microworld:
