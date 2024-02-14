@@ -25,7 +25,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./context/user/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: "pg_isready"
       interval: 10s
