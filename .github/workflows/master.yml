@@ -21,11 +21,11 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          cd /context/user
+          cd context/user
           ls -l
           ./gradlew build --console=plain
 
       - name: Run tests
         run: |
-          cd /context/user
+          cd context/user
           ./gradlew test --console=plain
