@@ -21,11 +21,10 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          ls -l
-          cd ./microworld/context/user
+          cd /context/user
           ./gradlew build --console=plain
 
       - name: Run tests
         run: |
-          cd ./microworld/context/user
+          cd /context/user
           ./gradlew test --console=plain
