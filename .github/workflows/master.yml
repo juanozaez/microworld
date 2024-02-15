@@ -19,9 +19,10 @@ jobs:
           distribution: 'corretto'
           java-version: '17'
 
-      - uses: isbang/compose-action@v1.5.1
+      - name: Set up docker
+        uses: isbang/compose-action@v1.5.1
         with:
-          compose-file: "./docker-compose-test.yml"
+          compose-file: "./docker-compose-test.yaml"
 
       - name: Build and run tests
         run: |
