@@ -20,7 +20,11 @@ jobs:
           java-version: '17'
 
       - name: Build with Gradle
-        run: ./context/user/gradlew build --console=plain
+        run: |
+          cd microworld/context/user
+          ./gradlew build --console=plain
 
       - name: Run tests
-        run: ./context/user/gradlew test --console=plain
+        run: |
+          cd microworld/context/user
+          ./gradlew test --console=plain
