@@ -1,4 +1,4 @@
-package com.microworld.user
+package com.microworld.eventbus
 
 import java.time.ZonedDateTime
 
