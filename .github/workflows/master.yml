@@ -19,13 +19,7 @@ jobs:
           distribution: 'corretto'
           java-version: '17'
 
-      - name: Build with Gradle
+      - name: Build and run tests
         run: |
           cd context/user
-          ls -l
           ./gradlew build --console=plain
-
-      - name: Run tests
-        run: |
-          cd context/user
-          ./gradlew test --console=plain
